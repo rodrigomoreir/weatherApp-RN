@@ -1,5 +1,5 @@
-import React from 'react';
-import { Text } from 'react-native';
+import React, { memo } from 'react';
+import { TouchableOpacityProps } from 'react-native';
 
 import {
   StyledContainer,
@@ -8,20 +8,21 @@ import {
   StyledCityContent,
   StyledTitle,
   StyledSubtitle,
-  StyledTemperature
+  StyledTemperature,
 } from './styles';
 
-interface Props {
+interface Props extends TouchableOpacityProps {
   city: string;
   hour: string;
   weather: string;
   temperature: string;
   tempMaxAndMin: string;
+  onPress: () => void;
 }
 
-export const WeatherCard = ({ city, hour, weather, temperature, tempMaxAndMin }: Props) => {
+const WeatherCard = ({ city, hour, weather, temperature, tempMaxAndMin, onPress }: Props) => {
   return (
-    <StyledContainer>
+    <StyledContainer onPress={onPress}>
       <StyledLeftContent>
         <StyledCityContent>
           <StyledTitle>{city}</StyledTitle>
@@ -36,3 +37,5 @@ export const WeatherCard = ({ city, hour, weather, temperature, tempMaxAndMin }:
     </StyledContainer>
   );
 }
+
+export default memo(WeatherCard);

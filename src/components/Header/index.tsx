@@ -1,24 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import SearchBar from '../SearchBar';
+import React from 'react';
 
-import { StyledContainer, StyledTitle } from './styles';
+import {
+  StyledContainer,
+  StyledTitle,
+  StyledImageContainer,
+  StyledImage,
+  StyledContent,
+  StyledTitleWithGoBack
+} from './styles';
 
-export const Header = () => {
-  const [searchValue, setSearchValue] = useState<string>('')
+import chevronLeft from '../../assets/icons/chevronLeft.png'
 
-  useEffect(() => {
-    console.log(searchValue)
+interface Props {
+  title: string;
+  goBack?: () => void;
+}
 
-  }, [searchValue])
-
+export const Header = ({ title, goBack }: Props) => {
   return (
     <StyledContainer>
-      <StyledTitle>Tempo</StyledTitle>
-      <SearchBar
-        placeholder='Busque uma cidade'
-        value={searchValue}
-        onChangeText={filter => setSearchValue(filter)}
-      />
-    </StyledContainer>
+      {goBack ? (
+        <StyledContent>
+          <StyledImageContainer onPress={goBack}>
+            <StyledImage source={chevronLeft} />
+          </StyledImageContainer>
+          <StyledTitleWithGoBack>{title}</StyledTitleWithGoBack>
+        </StyledContent>
+      ) :
+        <StyledTitle>{title}</StyledTitle>
+      }
+    </StyledContainer >
   );
 }

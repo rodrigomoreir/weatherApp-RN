@@ -1,187 +1,155 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { Header } from '../../components/Header';
-import { WeatherCard } from '../../components/WeatherCard';
+import WeatherCard from '../../components/WeatherCard';
+import SearchBar from '../../components/SearchBar';
 
 import api from '../../services/api';
 
-import { StyledContainer, StyledFlatlist } from './styles';
+import {
+  StyledContainer,
+  StyledFlatlist,
+  StyledSearchContainer
+} from './styles';
 
-interface Props {
+export interface CityProps {
   id: number;
   name: string;
   hour: string;
+  minutes: string;
   weather: string;
   temperature: number;
   temperatureMin: number;
   temperatureMax: number;
+  feelsLike: number;
+  atmPressure: number;
+  humidity: number;
+  country: string;
+  visibility: number;
+  speedWind: number;
+  cloudPercentage: number;
 }
 
-export const HomeScreen = () => {
-  const [citis, setCitis] = useState([]);
-  var data: Props[] = []
-  //   {
-  //     id: londonData.data.id,
-  //     name: londonData.data.name,
-  //     hour: londonData.data.dt,
-  //     weather: londonData.data.weather[0].description,
-  //     temperature: londonData.data.main.temp,
-  //     temperatureMin: londonData.data.main.temp_min,
-  //     temperatureMax: londonData.data.main.temp_max
-  //   },
-  //   {
-  //     id: 2,
-  //     title: 'Brasil'
-  //   }
-  // ]
+// function convertUTCDateToLocalDate(valor) {
+//   var newDate = new Date(valor.getTime() + valor.getTimezoneOffset() * 60000);
 
-  const getWeather = async () => {
-    try {
-      const aracajuData = await api.get(`weather?q=Aracaju,br&APPID=3e3afcb7e55ba8f7f9116213fd0ea726`);
-      const aracaju = {
-        id: aracajuData.data.id,
-        name: aracajuData.data.name,
-        hour: aracajuData.data.dt,
-        weather: aracajuData.data.weather[0].description,
-        temperature: aracajuData.data.main.temp,
-        temperatureMin: aracajuData.data.main.temp_min,
-        temperatureMax: aracajuData.data.main.temp_max
+//   var offset = valor.getTimezoneOffset() / 60;
+//   var hours = valor.getHours();
+
+//   console.log('HOURS', uctHours)
+
+//   newDate.setHours(hours - offset);
+
+//   return newDate;
+// }
+// var teste = convertUTCDateToLocalDate(new Date(locationData.data.dt))
+
+const HomeScreen = () => {
+  const { navigate } = useNavigation();
+  const [cities, setCities] = useState<CityProps>([]);
+  const units = 'metric'
+
+  const navigateToDetails = (cityData: CityProps) => {
+    navigate('DetailsScreen', { cityData })
+  }
+
+  const [searchValue, setSearchValue] = useState<string>('')
+
+  useEffect(() => {
+    console.log(searchValue)
+
+  }, [searchValue])
+
+  const getWeather = () => {
+
+    const cityName = [
+      'Aracaju,br',
+      'Lisbon,pt',
+      'Madrid,es',
+      'Paris,fr',
+      'Berlin,de',
+      'Copenhagen,dk',
+      'Rome,it',
+      'London,uk',
+      'Dublin,ie',
+      'Prague,cz',
+      'Vienna,at'
+    ]
+
+    const correctionHour = [0, 3, 4, 4, 4, 4, 4, 3, 3, 4, 4]
+
+    cityName.forEach(async function (cityAndCountry) {
+      try {
+        const locationData = await api.get(`weather?q=${cityAndCountry}&units=${units}&APPID=3e3afcb7e55ba8f7f9116213fd0ea726`);
+
+        const date = new Date();
+        const hour = date.getHours()
+        const minutes = date.getMinutes()
+
+        const localClimate = {
+          id: locationData.data.id,
+          name: locationData.data.name,
+          hour,
+          minutes: minutes > 10 ? minutes : `0${minutes}`,
+          weather: locationData.data.weather[0].description,
+          temperature: locationData.data.main.temp,
+          temperatureMin: locationData.data.main.temp_min,
+          temperatureMax: locationData.data.main.temp_max,
+          feelsLike: locationData.data.main.feels_like,
+          atmPressure: locationData.data.main.pressure,
+          humidity: locationData.data.main.humidity,
+          country: locationData.data.sys.country,
+          visibility: locationData.data.visibility,
+          speedWind: locationData.data.wind.speed,
+          cloudPercentage: locationData.data.clouds.all
+        }
+
+        setCities(oldArray => [...oldArray, localClimate])
+
+        // var date = new Date(localClimate.hour * 1000);
+        // var hour = date.getHours();
+        // var minutes = "0" + date.getMinutes();
+        // var seconds = "0" + date.getSeconds();
+
+
+        // console.log(hour, minutes, date)
+
+      } catch (error) {
+        console.log('err', err)
       }
-
-      const lisbonData = await api.get('weather?q=Lisbon,pt&APPID=3e3afcb7e55ba8f7f9116213fd0ea726');
-      const lisbon = {
-        id: lisbonData.data.id,
-        name: lisbonData.data.name,
-        hour: lisbonData.data.dt,
-        weather: lisbonData.data.weather[0].description,
-        temperature: lisbonData.data.main.temp,
-        temperatureMin: lisbonData.data.main.temp_min,
-        temperatureMax: lisbonData.data.main.temp_max
-      }
-
-      const madridData = await api.get('weather?q=Madrid,es&APPID=3e3afcb7e55ba8f7f9116213fd0ea726');
-      const madrid = {
-        id: madridData.data.id,
-        name: madridData.data.name,
-        hour: madridData.data.dt,
-        weather: madridData.data.weather[0].description,
-        temperature: madridData.data.main.temp,
-        temperatureMin: madridData.data.main.temp_min,
-        temperatureMax: madridData.data.main.temp_max
-      }
-
-      const parisData = await api.get('weather?q=Paris,fr&APPID=3e3afcb7e55ba8f7f9116213fd0ea726');
-      const paris = {
-        id: parisData.data.id,
-        name: parisData.data.name,
-        hour: parisData.data.dt,
-        weather: parisData.data.weather[0].description,
-        temperature: parisData.data.main.temp,
-        temperatureMin: parisData.data.main.temp_min,
-        temperatureMax: parisData.data.main.temp_max
-      }
-
-      const berlinData = await api.get('weather?q=Berlin,de&APPID=3e3afcb7e55ba8f7f9116213fd0ea726');
-      const berlin = {
-        id: berlinData.data.id,
-        name: berlinData.data.name,
-        hour: berlinData.data.dt,
-        weather: berlinData.data.weather[0].description,
-        temperature: berlinData.data.main.temp,
-        temperatureMin: berlinData.data.main.temp_min,
-        temperatureMax: berlinData.data.main.temp_max
-      }
-
-      const copenhagenData = await api.get('weather?q=Copenhagen,dk&APPID=3e3afcb7e55ba8f7f9116213fd0ea726');
-      const copenhagen = {
-        id: copenhagenData.data.id,
-        name: copenhagenData.data.name,
-        hour: copenhagenData.data.dt,
-        weather: copenhagenData.data.weather[0].description,
-        temperature: copenhagenData.data.main.temp,
-        temperatureMin: copenhagenData.data.main.temp_min,
-        temperatureMax: copenhagenData.data.main.temp_max
-      }
-
-      const romeData = await api.get('weather?q=Rome,it&APPID=3e3afcb7e55ba8f7f9116213fd0ea726');
-      const rome = {
-        id: romeData.data.id,
-        name: romeData.data.name,
-        hour: romeData.data.dt,
-        weather: romeData.data.weather[0].description,
-        temperature: romeData.data.main.temp,
-        temperatureMin: romeData.data.main.temp_min,
-        temperatureMax: romeData.data.main.temp_max
-      }
-
-      const londonData = await api.get('weather?q=London,uk&APPID=3e3afcb7e55ba8f7f9116213fd0ea726');
-      const london = {
-        id: londonData.data.id,
-        name: londonData.data.name,
-        hour: londonData.data.dt,
-        weather: londonData.data.weather[0].description,
-        temperature: londonData.data.main.temp,
-        temperatureMin: londonData.data.main.temp_min,
-        temperatureMax: londonData.data.main.temp_max
-      }
-
-      const dublinData = await api.get('weather?q=Dublin,ie&APPID=3e3afcb7e55ba8f7f9116213fd0ea726');
-      const dublin = {
-        id: dublinData.data.id,
-        name: dublinData.data.name,
-        hour: dublinData.data.dt,
-        weather: dublinData.data.weather[0].description,
-        temperature: dublinData.data.main.temp,
-        temperatureMin: dublinData.data.main.temp_min,
-        temperatureMax: dublinData.data.main.temp_max
-      }
-
-      const pragueData = await api.get('weather?q=Prague,cz&APPID=3e3afcb7e55ba8f7f9116213fd0ea726');
-      const prague = {
-        id: pragueData.data.id,
-        name: pragueData.data.name,
-        hour: pragueData.data.dt,
-        weather: pragueData.data.weather[0].description,
-        temperature: pragueData.data.main.temp,
-        temperatureMin: pragueData.data.main.temp_min,
-        temperatureMax: pragueData.data.main.temp_max
-      }
-
-      const viennaData = await api.get('weather?q=Vienna,at&APPID=3e3afcb7e55ba8f7f9116213fd0ea726');
-      const vienna = {
-        id: viennaData.data.id,
-        name: viennaData.data.name,
-        hour: viennaData.data.dt,
-        weather: viennaData.data.weather[0].description,
-        temperature: viennaData.data.main.temp,
-        temperatureMin: viennaData.data.main.temp_min,
-        temperatureMax: viennaData.data.main.temp_max
-      }
-
-
-      setCitis([aracaju, lisbon, madrid, paris, berlin, copenhagen, rome, london, dublin, prague, vienna]);
-    } catch (err) {
-      console.log('err', err)
-    }
+    })
   }
 
   useEffect(() => {
     getWeather()
-  }, [])
+  }, []);
+
+  // useFocusEffect(useCallback(() => {
+  //   getWeather()
+  // }, []))
 
   return (
     <>
-      <Header />
+      <Header title={'Weather'} />
       <StyledContainer>
+        <StyledSearchContainer>
+          <SearchBar
+            placeholder='Busque uma cidade'
+            value={searchValue}
+            onChangeText={filter => setSearchValue(filter)}
+          />
+        </StyledSearchContainer>
         <StyledFlatlist
-          data={citis}
+          data={cities}
           keyExtractor={(item) => String(item.id)}
           renderItem={({ item }) => (
             <WeatherCard
-              city={item.name}
-              hour={item.hour}
+              city={`${item.name} - ${item.country} `}
+              hour={`${item.hour}:${item.minutes}`}
               weather={item.weather}
-              temperature={item.temperature}
-              tempMaxAndMin={`Max.: ${item.temperatureMax} | Min.: ${item.temperatureMin}`}
+              temperature={`${item.temperature}°`}
+              tempMaxAndMin={`Max.: ${item.temperatureMax}° Min.: ${item.temperatureMin}°`}
+              onPress={() => navigateToDetails(item)}
             />
           )}
         />
@@ -189,3 +157,5 @@ export const HomeScreen = () => {
     </>
   )
 };
+
+export default HomeScreen;
