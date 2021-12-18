@@ -2,8 +2,6 @@ import React from 'react';
 
 import icSearch from '../../assets/icons/icSearch.png';
 
-import { useTheme } from 'styled-components';
-
 import {
   StyledContainer,
   StyledTextInput,
@@ -18,13 +16,12 @@ interface Props {
 }
 
 const SearchBar = ({ placeholder, value, onChangeText }: Props) => {
-  const theme = useTheme();
   return (
     <StyledContainer>
       <StyledTextInput
         testID='text-input'
         placeholder={placeholder}
-        placeholderTextColor={theme.colors.textSecondary}
+        placeholderTextColor={'#969CB2'}
         value={value}
         onChangeText={onChangeText}
       />
