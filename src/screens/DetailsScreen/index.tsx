@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import LottieView from 'lottie-react-native';
 
 import Animated, {
   useSharedValue,
@@ -13,6 +14,8 @@ import Animated, {
 import { Header } from '../../components/Header';
 import { CityProps } from '../HomeScreen';
 
+import { ANIMATION } from '../../utils/constants';
+
 import {
   StyledContainer,
   StyledWeatherContent,
@@ -21,7 +24,7 @@ import {
   StyledWeatherTitle,
   StyledWeatherDetailsCard,
   StyledSeparator,
-  StyledInfoContent
+  StyledInfoContent,
 } from './styles';
 
 interface Params {
@@ -33,17 +36,17 @@ const DetailsScreen = () => {
   const route = useRoute();
   const { cityData } = route.params as Params
 
-  const messagePosition = useSharedValue(-50)
-  const messageOpacity = useSharedValue(0)
+  const contentPosition = useSharedValue(-50)
+  const contentOpacity = useSharedValue(0)
 
-  const messageStyle = useAnimatedStyle(() => {
+  const contentStyle = useAnimatedStyle(() => {
     return {
       transform: [
-        { translateY: messagePosition.value }
+        { translateY: contentPosition.value }
       ],
-      // opacity: messageOpacity.value,
+      // opacity: contentOpacity.value,
       opacity: interpolate(
-        messagePosition.value,
+        contentPosition.value,
         [-50, 0],
         [0, 1],
         Extrapolate.CLAMP,
@@ -52,11 +55,11 @@ const DetailsScreen = () => {
   })
 
   useEffect(() => {
-    messagePosition.value = withTiming(0, {
+    contentPosition.value = withTiming(0, {
       duration: 700,
       // easing: Easing.bounce
     })
-    messageOpacity.value = withTiming(1, {
+    contentOpacity.value = withTiming(1, {
       duration: 1000,
       easing: Easing.bounce
     })
@@ -66,19 +69,19 @@ const DetailsScreen = () => {
     <>
       <Header title={'Details'} goBack={goBack} />
       <StyledContainer>
-        <StyledWeatherContent>
-          <StyledCityTitle>{cityData.name} - {cityData.country}</StyledCityTitle>
-          <StyledTemperatureTitle>{cityData.temperature}°</StyledTemperatureTitle>
-          <StyledWeatherTitle>{cityData.weather}</StyledWeatherTitle>
-          <StyledWeatherTitle>Max.: {cityData.temperatureMax}° | Min.: {cityData.temperatureMin}°</StyledWeatherTitle>
-          <StyledWeatherTitle>Feels like: {cityData.feelsLike}°</StyledWeatherTitle>
-        </StyledWeatherContent>
         <Animated.View
           from={{ opacity: 0, translateY: -50 }}
           animate={{ opacity: 1, translateY: 0 }}
           transition={{ type: 'timing', duration: 700 }}
-          style={[messageStyle]}
+          style={[contentStyle]}
         >
+          <StyledWeatherContent>
+            <StyledCityTitle>{cityData.name} - {cityData.country}</StyledCityTitle>
+            <StyledTemperatureTitle>{cityData.temperature}°</StyledTemperatureTitle>
+            <StyledWeatherTitle>{cityData.weather}</StyledWeatherTitle>
+            <StyledWeatherTitle>Max.: {cityData.temperatureMax}° | Min.: {cityData.temperatureMin}°</StyledWeatherTitle>
+            <StyledWeatherTitle>Feels like: {cityData.feelsLike}°</StyledWeatherTitle>
+          </StyledWeatherContent>
 
           <StyledWeatherDetailsCard>
 
@@ -112,6 +115,13 @@ const DetailsScreen = () => {
 
           </StyledWeatherDetailsCard>
         </Animated.View>
+        <LottieView
+          source={ANIMATION.find(weather => weather.weather === cityData.weather)?.icon}
+          autoPlay
+          loop
+          autoSize={true}
+          style={{ alignSelf: 'center' }}
+        />
       </StyledContainer>
     </>
   );

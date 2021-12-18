@@ -47,6 +47,8 @@ export interface CityProps {
 const HomeScreen = () => {
   const { navigate } = useNavigation();
   const [cities, setCities] = useState<CityProps>([]);
+  const [searchCity, setSearchCity] = useState();
+  const [searchedCity, setSearchedCity] = useState();
   const units = 'metric'
 
   const navigateToDetails = (cityData: CityProps) => {
@@ -60,7 +62,7 @@ const HomeScreen = () => {
 
   }, [searchValue])
 
-  const getWeather = () => {
+  const getWeather = useCallback(() => {
 
     const cityName = [
       'Aracaju,br',
@@ -89,7 +91,7 @@ const HomeScreen = () => {
         const localClimate = {
           id: locationData.data.id,
           name: locationData.data.name,
-          hour,
+          hour: hour > 10 ? hour : `0${hour}`,
           minutes: minutes > 10 ? minutes : `0${minutes}`,
           weather: locationData.data.weather[0].description,
           temperature: locationData.data.main.temp,
@@ -118,15 +120,23 @@ const HomeScreen = () => {
         console.log('err', err)
       }
     })
-  }
+  }, [])
 
   useEffect(() => {
     getWeather()
   }, []);
 
-  // useFocusEffect(useCallback(() => {
-  //   getWeather()
-  // }, []))
+  const searching = async () => {
+    if (searchCity) {
+      await setSearchedCity(
+        cities.filter(city => city.name.toLowerCase().includes(searchCity.toLowerCase()))
+      )
+    }
+  }
+
+  useEffect(() => {
+    searching()
+  }, [searchCity]);
 
   return (
     <>
@@ -135,12 +145,12 @@ const HomeScreen = () => {
         <StyledSearchContainer>
           <SearchBar
             placeholder='Busque uma cidade'
-            value={searchValue}
-            onChangeText={filter => setSearchValue(filter)}
+            value={searchCity}
+            onChangeText={filter => setSearchCity(filter)}
           />
         </StyledSearchContainer>
         <StyledFlatlist
-          data={cities}
+          data={searchCity ? searchedCity : cities}
           keyExtractor={(item) => String(item.id)}
           renderItem={({ item }) => (
             <WeatherCard

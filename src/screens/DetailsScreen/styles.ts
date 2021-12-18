@@ -6,6 +6,7 @@ export const StyledContainer = styled.View`
   flex: 1;
   padding: 0 15px;
   background-color: ${({ theme }) => theme.colors.background};
+  /* align-items: center; */
 `
 
 export const StyledWeatherContent = styled.View`

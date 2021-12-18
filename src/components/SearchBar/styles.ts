@@ -12,7 +12,7 @@ export const StyledContainer = styled.View`
 export const StyledTextInput = styled.TextInput`
   flex: 1;
   padding-left: 20px;
-  color: black;
+  color: ${({ theme }) => theme.colors.textPrimary};
 `;
 
 export const StyledIconContainer = styled.TouchableOpacity.attrs({
