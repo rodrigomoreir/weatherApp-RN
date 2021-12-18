@@ -16,7 +16,7 @@ const App = () => {
     <AppearanceProvider>
       <ThemeProvider theme={scheme === 'dark' ? darkTheme : defaultTheme}>
         <NavigationContainer>
-          <StatusBar barStyle={'dark-content'} />
+          <StatusBar barStyle={scheme === 'dark' ? 'light-content' : 'dark-content'} />
           <SafeAreaView style={{ flex: 1 }}>
             <Routes />
           </SafeAreaView>

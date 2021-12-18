@@ -55,7 +55,7 @@ const DetailsScreen = () => {
 
   useEffect(() => {
     contentPosition.value = withTiming(0, {
-      duration: 700,
+      duration: 800,
     })
     contentOpacity.value = withTiming(1, {
       duration: 1000,

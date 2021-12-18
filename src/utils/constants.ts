@@ -1,31 +1,23 @@
 import mist from '../assets/animations/mist.json';
-// import moonCleanSky from '../assets/animations/moonCleanSky.json';
-// import overcastMoon from '../assets/animations/overcastMoon.json';
 import overcastSun from '../assets/animations/overcastSun.json';
 import rainDay from '../assets/animations/rainDay.json';
 import rainNight from '../assets/animations/rainNight.json';
 import scatteredClouds from '../assets/animations/scatteredClouds.json';
 import sunCleanSky from '../assets/animations/sunCleanSky.json';
+// import moonCleanSky from '../assets/animations/moonCleanSky.json';
+// import overcastMoon from '../assets/animations/overcastMoon.json';
 
 export const ANIMATION = [
   {
     weather: 'mist',
     icon: mist
   },
-  // {
-  //   weather: 'clean sky',
-  //   icon: moonCleanSky
-  // },
-  // {
-  //   weather: 'overcast clouds',
-  //   icon: overcastMoon
-  // },
   {
     weather: 'overcast clouds',
     icon: overcastSun
   },
   {
-    weather: 'rainDay',
+    weather: 'light intensity drizzle',
     icon: rainDay
   },
   {
@@ -48,4 +40,12 @@ export const ANIMATION = [
     weather: 'clear sky',
     icon: sunCleanSky
   },
+  // {
+  //   weather: 'clean sky',
+  //   icon: moonCleanSky
+  // },
+  // {
+  //   weather: 'overcast clouds',
+  //   icon: overcastMoon
+  // },
 ]

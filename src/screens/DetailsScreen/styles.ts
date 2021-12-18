@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const StyledContainer = styled.View`
+export const StyledContainer = styled.ScrollView`
   flex: 1;
   padding: 0 15px;
   background-color: ${({ theme }) => theme.colors.background};
@@ -32,6 +32,7 @@ export const StyledWeatherTitle = styled.Text`
 
 export const StyledWeatherDetailsCard = styled.View`
   margin-top: 10px;
+  margin-bottom: 10px;
   padding: 15px;
   border-radius: 20px;
   border-width: 0.5px;
