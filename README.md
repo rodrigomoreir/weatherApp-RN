@@ -10,6 +10,7 @@ This `README.md` document aims to provide the necessary information for the exec
 
 * Evaluate the candidate for a React Native Developer position.
 
+
 ## Dependências do projeto / Project dependencies
 
 ### Navegação / Navigation
@@ -33,6 +34,7 @@ This `README.md` document aims to provide the necessary information for the exec
 * "react-native-reanimated": "^2.3.1" -> Animações e reanimações
 * "react-native-safe-area-context": "^3.3.2" -> SafeArea para manter caracteristicas visuais do smartphone
 
+
 ## Executando o Projeto / running the project
 
 * Após clonar o Projeto, acessar a pasta e rodar um 'yarn' no terminal para instalar todas as dependências do Projeto.
@@ -44,6 +46,7 @@ This `README.md` document aims to provide the necessary information for the exec
 * Afterwards, if you want to run the project in the iOS emulator, access the 'ios' folder with $ cd ios, and run 'pod install' (cocoapods needed), return the project root folder and run a 'yarn ios' . If this process doesn't work, just open the project through xcode and click on Play to generate the build and start the project.
 * If using the android emulator, the process is automatic, so just run 'yarn android'.
 * The project will start and be ready to use.
+
 
 ## Passo a passo / Step by Step
 
@@ -65,6 +68,7 @@ se adaptará também ao modo noturno, mantendo as essências de cores e UI. Se o
 
 The different UI modes were thought of the user's preference, so when modifying the phone's configuration to Night Mode, the application
 will also adapt to night mode, keeping the color essences and UI. If the user prefers bright mode, the application will adapt to bright mode.
+
 
 ## Considerações Finais / Final considerations
 
