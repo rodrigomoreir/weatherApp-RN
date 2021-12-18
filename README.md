@@ -4,7 +4,7 @@ Este documento `README.md` tem como objetivo fornecer as informações necessár
 
 This `README.md` document aims to provide the necessary information for the execution of the Weather project, developed by Rodrigo Moreira in Test for Wit Software Company.
 
-### Objetivo / Objective
+## Objetivo / Objective
 
 * Avaliar o candidato para uma vaga de Desenvolvedor React Native.
 
