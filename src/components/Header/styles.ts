@@ -32,8 +32,9 @@ export const StyledImageContainer = styled.TouchableOpacity`
   justify-content: center;
   border-radius: 20px;
   border-width: 0.5px;
-  border-color: ${({ theme }) => theme.colors.border}
+  border-color: ${({ theme }) => theme.colors.border};
 `
+
 export const StyledImage = styled.Image`
   height: 20px;
   width: 20px;

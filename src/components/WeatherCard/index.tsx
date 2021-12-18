@@ -39,7 +39,6 @@ const WeatherCard = ({ city, hour, weather, temperature, tempMaxAndMin, onPress 
       transform: [
         { translateY: contentPosition.value }
       ],
-      // opacity: contentOpacity.value,
       opacity: interpolate(
         contentPosition.value,
         [-50, 0],

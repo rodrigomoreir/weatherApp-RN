@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { useFocusEffect, useNavigation } from '@react-navigation/native';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Header } from '../../components/Header';
 import WeatherCard from '../../components/WeatherCard';
 import SearchBar from '../../components/SearchBar';
@@ -29,20 +29,6 @@ export interface CityProps {
   speedWind: number;
   cloudPercentage: number;
 }
-
-// function convertUTCDateToLocalDate(valor) {
-//   var newDate = new Date(valor.getTime() + valor.getTimezoneOffset() * 60000);
-
-//   var offset = valor.getTimezoneOffset() / 60;
-//   var hours = valor.getHours();
-
-//   console.log('HOURS', uctHours)
-
-//   newDate.setHours(hours - offset);
-
-//   return newDate;
-// }
-// var teste = convertUTCDateToLocalDate(new Date(locationData.data.dt))
 
 const HomeScreen = () => {
   const { navigate } = useNavigation();
@@ -107,14 +93,6 @@ const HomeScreen = () => {
         }
 
         setCities(oldArray => [...oldArray, localClimate])
-
-        // var date = new Date(localClimate.hour * 1000);
-        // var hour = date.getHours();
-        // var minutes = "0" + date.getMinutes();
-        // var seconds = "0" + date.getSeconds();
-
-
-        // console.log(hour, minutes, date)
 
       } catch (error) {
         console.log('err', err)

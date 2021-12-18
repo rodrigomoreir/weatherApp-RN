@@ -14,7 +14,6 @@ export const StyledFlatlist = styled.FlatList`
 `;
 
 export const StyledSearchContainer = styled.View`
-  /* background-color: white; */
   width: 100%;
   padding: 0 15px 10px;
 `

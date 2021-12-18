@@ -1,12 +1,9 @@
 import styled from 'styled-components/native';
-import { useTheme } from '@react-navigation/native';
-
 
 export const StyledContainer = styled.View`
   flex: 1;
   padding: 0 15px;
   background-color: ${({ theme }) => theme.colors.background};
-  /* align-items: center; */
 `
 
 export const StyledWeatherContent = styled.View`
@@ -34,7 +31,6 @@ export const StyledWeatherTitle = styled.Text`
 `
 
 export const StyledWeatherDetailsCard = styled.View`
-  /* opacity: 0.8; */
   margin-top: 10px;
   padding: 15px;
   border-radius: 20px;

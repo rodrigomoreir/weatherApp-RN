@@ -23,6 +23,7 @@ export const StyledRightContent = styled.View`
   align-items: flex-end;
   justify-content: space-between;
 `
+
 export const StyledCityContent = styled.View`
 `
 

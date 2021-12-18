@@ -44,7 +44,6 @@ const DetailsScreen = () => {
       transform: [
         { translateY: contentPosition.value }
       ],
-      // opacity: contentOpacity.value,
       opacity: interpolate(
         contentPosition.value,
         [-50, 0],
@@ -57,7 +56,6 @@ const DetailsScreen = () => {
   useEffect(() => {
     contentPosition.value = withTiming(0, {
       duration: 700,
-      // easing: Easing.bounce
     })
     contentOpacity.value = withTiming(1, {
       duration: 1000,
