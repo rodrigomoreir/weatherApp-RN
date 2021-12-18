@@ -65,6 +65,13 @@ Os diferentes modos de UI foram pensados na preferência do usuário. Portanto, 
 
 The different UI modes were designed according to the user's preference. Therefore, when changing the phone's configuration to Night Mode, the application will adapt, keeping the essence of colors and UI. If the user prefers the clear mode, the application will adapt accordingly.
 
+### Tests
+Foram implementados testes com Jest, incluindo snapshots. Para rodar os testes, so rodar o comando
+'yarn test'. Para atualizar os Snapshots, roda 'yarn test -u'.
+
+Tests with Jest were implemented, including snapshots. To run the tests, just run the command
+'yarn test'. To update the Snapshots, run 'yarn test -u'.
+
 
 ## Considerações Finais / Final considerations
 
