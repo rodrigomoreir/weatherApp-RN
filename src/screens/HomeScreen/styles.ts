@@ -4,6 +4,7 @@ export const StyledContainer = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
+  background-color: ${({ theme }) => theme.colors.background} ;
 `;
 
 export const StyledFlatlist = styled.FlatList`
@@ -13,7 +14,7 @@ export const StyledFlatlist = styled.FlatList`
 `;
 
 export const StyledSearchContainer = styled.View`
-  background-color: white;
+  /* background-color: white; */
   width: 100%;
   padding: 0 15px 10px;
 `

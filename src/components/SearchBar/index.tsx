@@ -1,12 +1,14 @@
 import React from 'react';
-import { Image } from 'react-native';
 
 import icSearch from '../../assets/icons/icSearch.png';
+
+import { useTheme } from 'styled-components';
 
 import {
   StyledContainer,
   StyledTextInput,
-  StyledIconContainer
+  StyledIconContainer,
+  StyledImage
 } from './styles';
 
 interface Props {
@@ -16,16 +18,18 @@ interface Props {
 }
 
 const SearchBar = ({ placeholder, value, onChangeText }: Props) => {
+  const theme = useTheme();
   return (
     <StyledContainer>
       <StyledTextInput
         testID='text-input'
         placeholder={placeholder}
+        placeholderTextColor={theme.colors.textSecondary}
         value={value}
         onChangeText={onChangeText}
       />
       <StyledIconContainer testID='pressable-icon'>
-        <Image source={icSearch} />
+        <StyledImage source={icSearch} />
       </StyledIconContainer>
     </StyledContainer>
   );

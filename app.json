@@ -1,4 +1,7 @@
 {
   "name": "WeatherApp",
-  "displayName": "WeatherApp"
+  "displayName": "WeatherApp",
+  "ios": {
+    "userInterfaceStyle": "automatic"
+  }
 }

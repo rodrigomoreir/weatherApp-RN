@@ -4,14 +4,12 @@ export const StyledContainer = styled.View`
   border-radius: 15px;
   height: 40px;
   flex-direction: row;
-  ${({ theme: { colors } }) => css`
-    background-color: grey;
-  `}
+  background-color: ${({ theme }) => theme.colors.card};
+  border-width: 0.5px;
+  border-color: ${({ theme }) => theme.colors.border};
 `;
 
-export const StyledTextInput = styled.TextInput.attrs(() => ({
-  placeholderTextColor: 'black'
-}))`
+export const StyledTextInput = styled.TextInput`
   flex: 1;
   padding-left: 20px;
   color: black;
@@ -24,3 +22,7 @@ export const StyledIconContainer = styled.TouchableOpacity.attrs({
   justify-content: center;
   align-items: center;
 `;
+
+export const StyledImage = styled.Image`
+  tint-color: ${({ theme }) => theme.colors.border}
+`

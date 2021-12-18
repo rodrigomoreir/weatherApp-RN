@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
-import { MotiView } from 'moti';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  Easing,
+  interpolate,
+  Extrapolate
+} from 'react-native-reanimated';
 
 import { Header } from '../../components/Header';
 import { CityProps } from '../HomeScreen';
@@ -26,6 +33,35 @@ const DetailsScreen = () => {
   const route = useRoute();
   const { cityData } = route.params as Params
 
+  const messagePosition = useSharedValue(-50)
+  const messageOpacity = useSharedValue(0)
+
+  const messageStyle = useAnimatedStyle(() => {
+    return {
+      transform: [
+        { translateY: messagePosition.value }
+      ],
+      // opacity: messageOpacity.value,
+      opacity: interpolate(
+        messagePosition.value,
+        [-50, 0],
+        [0, 1],
+        Extrapolate.CLAMP,
+      )
+    }
+  })
+
+  useEffect(() => {
+    messagePosition.value = withTiming(0, {
+      duration: 700,
+      // easing: Easing.bounce
+    })
+    messageOpacity.value = withTiming(1, {
+      duration: 1000,
+      easing: Easing.bounce
+    })
+  }, [])
+
   return (
     <>
       <Header title={'Details'} goBack={goBack} />
@@ -37,7 +73,12 @@ const DetailsScreen = () => {
           <StyledWeatherTitle>Max.: {cityData.temperatureMax}° | Min.: {cityData.temperatureMin}°</StyledWeatherTitle>
           <StyledWeatherTitle>Feels like: {cityData.feelsLike}°</StyledWeatherTitle>
         </StyledWeatherContent>
-        <MotiView>
+        <Animated.View
+          from={{ opacity: 0, translateY: -50 }}
+          animate={{ opacity: 1, translateY: 0 }}
+          transition={{ type: 'timing', duration: 700 }}
+          style={[messageStyle]}
+        >
 
           <StyledWeatherDetailsCard>
 
@@ -70,7 +111,7 @@ const DetailsScreen = () => {
             </StyledInfoContent>
 
           </StyledWeatherDetailsCard>
-        </MotiView>
+        </Animated.View>
       </StyledContainer>
     </>
   );
