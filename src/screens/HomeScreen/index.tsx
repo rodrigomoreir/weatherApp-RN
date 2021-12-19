@@ -9,7 +9,9 @@ import api from '../../services/api';
 import {
   StyledContainer,
   StyledFlatlist,
-  StyledSearchContainer
+  StyledSearchContainer,
+  StyledContainerEmpty,
+  StyledText,
 } from './styles';
 
 export interface CityProps {
@@ -139,6 +141,11 @@ const HomeScreen = () => {
               tempMaxAndMin={`Max.: ${item.temperatureMax}° Min.: ${item.temperatureMin}°`}
               onPress={() => navigateToDetails(item)}
             />
+          )}
+          ListEmptyComponent={() => (
+            <StyledContainerEmpty>
+              <StyledText>Sorry, nothing found</StyledText>
+            </StyledContainerEmpty>
           )}
         />
       </StyledContainer>
