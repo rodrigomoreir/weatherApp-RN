@@ -77,20 +77,20 @@ Tests with Jest were implemented, including snapshots. To run the tests, just ru
   - 21:30 às 23:30: Criação do projeto, primeira tela e rotas
 
 - Dia 15/12: 4 horas
-- - 08:40 às 09:30: Criação do WeatherCard
-- - 18:40 às 21:50: Requisição, exibição da lista e tratamento dos dados.
+  - 08:40 às 09:30: Criação do WeatherCard
+  - 18:40 às 21:50: Requisição, exibição da lista e tratamento dos dados.
 
 - Dia 16/12: 5 horas e 30min
-- - 19:00 às 00:30: Correção de dados, segunda tela e ajustes em layout
+  - 19:00 às 00:30: Correção de dados, segunda tela e ajustes em layout
 
 - Dia 17/12: 5 horas
-- - 21:00 às 02:00: Finalização do Layout, Animações do app
+  - 21:00 às 02:00: Finalização do Layout, Animações do app
 
 - Dia 18/12: 3 horas 30min
-- - 15:30 às 19:00: Ajustes finais, icone, splashscreen, testes unitários com Jest
+  - 15:30 às 19:00: Ajustes finais, icone, splashscreen, testes unitários com Jest
 
 - Dia 19/12: 30min
-- - 00:30 às 01:00: Finalização dos testes unitários
+  - 00:30 às 01:00: Finalização dos testes unitários
 
 - Total de horas de desenvolvimento: 20 horas e 30 minutos
 
