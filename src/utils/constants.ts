@@ -44,4 +44,12 @@ export const ANIMATION = [
     weather: 'fog',
     icon: mist
   },
+  {
+    weather: 'moderate rain',
+    icon: rainDay
+  },
+  {
+    weather: 'light rain',
+    icon: rainNight
+  },
 ]
