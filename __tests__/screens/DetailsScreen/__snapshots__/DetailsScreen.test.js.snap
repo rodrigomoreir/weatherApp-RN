@@ -112,7 +112,7 @@ Array [
               ]
             }
           >
-            °
+            °C
           </Text>
           <Text
             style={
