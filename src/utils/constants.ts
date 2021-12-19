@@ -40,12 +40,8 @@ export const ANIMATION = [
     weather: 'clear sky',
     icon: sunCleanSky
   },
-  // {
-  //   weather: 'clean sky',
-  //   icon: moonCleanSky
-  // },
-  // {
-  //   weather: 'overcast clouds',
-  //   icon: overcastMoon
-  // },
+  {
+    weather: 'fog',
+    icon: mist
+  },
 ]
