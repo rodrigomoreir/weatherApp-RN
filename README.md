@@ -89,10 +89,11 @@ Tests with Jest were implemented, including snapshots. To run the tests, just ru
 - Dia 18/12: 3 horas 30min
   - 15:30 às 19:00: Ajustes finais, icone, splashscreen, testes unitários com Jest
 
-- Dia 19/12: 30min
+- Dia 19/12: 1 hora
   - 00:30 às 01:00: Finalização dos testes unitários
+  - + Alguns ajustes e empty state da lista
 
-- Total de horas de desenvolvimento: 20 horas e 30 minutos
+- Total de horas de desenvolvimento: 21 horas
 
 ## Considerações Finais / Final considerations
 
