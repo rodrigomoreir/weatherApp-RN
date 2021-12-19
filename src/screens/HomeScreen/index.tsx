@@ -135,7 +135,7 @@ const HomeScreen = () => {
               city={`${item.name} - ${item.country} `}
               hour={`${item.hour}:${item.minutes}`}
               weather={item.weather}
-              temperature={`${item.temperature}°`}
+              temperature={`${item.temperature}°C`}
               tempMaxAndMin={`Max.: ${item.temperatureMax}° Min.: ${item.temperatureMin}°`}
               onPress={() => navigateToDetails(item)}
             />

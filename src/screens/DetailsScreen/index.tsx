@@ -75,7 +75,7 @@ const DetailsScreen = () => {
         >
           <StyledWeatherContent>
             <StyledCityTitle>{cityData.name} - {cityData.country}</StyledCityTitle>
-            <StyledTemperatureTitle>{cityData.temperature}°</StyledTemperatureTitle>
+            <StyledTemperatureTitle>{cityData.temperature}°C</StyledTemperatureTitle>
             <StyledWeatherTitle>{cityData.weather}</StyledWeatherTitle>
             <StyledWeatherTitle>Max.: {cityData.temperatureMax}° | Min.: {cityData.temperatureMin}°</StyledWeatherTitle>
             <StyledWeatherTitle>Feels like: {cityData.feelsLike}°</StyledWeatherTitle>
