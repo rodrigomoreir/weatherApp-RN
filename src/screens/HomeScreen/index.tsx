@@ -122,7 +122,7 @@ const HomeScreen = () => {
       <StyledContainer>
         <StyledSearchContainer>
           <SearchBar
-            placeholder='Busque uma cidade'
+            placeholder='Search a city'
             value={searchCity}
             onChangeText={filter => setSearchCity(filter)}
           />
