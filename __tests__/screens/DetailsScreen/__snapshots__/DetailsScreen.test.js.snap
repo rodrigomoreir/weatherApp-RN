@@ -1,0 +1,454 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Details Screen matches snapshot 1`] = `
+Array [
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "paddingBottom": 15,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 15,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontSize": 25,
+            "fontWeight": "bold",
+            "marginBottom": 10,
+          },
+        ]
+      }
+    >
+      Details
+    </Text>
+  </View>,
+  <RCTScrollView
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "paddingBottom": 0,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 0,
+        },
+      ]
+    }
+  >
+    <View>
+      <View
+        animate={
+          Object {
+            "opacity": 1,
+            "translateY": 0,
+          }
+        }
+        from={
+          Object {
+            "opacity": 0,
+            "translateY": -50,
+          }
+        }
+        style={
+          Array [
+            Object {
+              "opacity": [MockFunction],
+              "transform": [MockFunction],
+            },
+          ]
+        }
+        transition={
+          Object {
+            "duration": 700,
+            "type": "timing",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+                "paddingBottom": 15,
+                "paddingLeft": 15,
+                "paddingRight": 15,
+                "paddingTop": 15,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 30,
+                  "fontWeight": "bold",
+                },
+              ]
+            }
+          >
+             - 
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 65,
+                },
+              ]
+            }
+          >
+            °
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "marginBottom": 3,
+                },
+              ]
+            }
+          />
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "marginBottom": 3,
+                },
+              ]
+            }
+          >
+            Max.: 
+            ° | Min.: 
+            °
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "marginBottom": 3,
+                },
+              ]
+            }
+          >
+            Feels like: 
+            °
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#F5F8FA",
+                "borderColor": "#808080",
+                "borderRadius": 20,
+                "borderWidth": 0.5,
+                "marginBottom": 10,
+                "marginTop": 10,
+                "paddingBottom": 15,
+                "paddingLeft": 15,
+                "paddingRight": 15,
+                "paddingTop": 15,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "marginBottom": 3,
+                },
+              ]
+            }
+          >
+            Outras informações de Clima
+          </Text>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderColor": "#808080",
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "height": 1,
+                  "marginBottom": 10,
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                  "marginTop": 10,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginTop": 5,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "marginBottom": 3,
+                  },
+                ]
+              }
+            >
+              Visibility
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "marginBottom": 3,
+                  },
+                ]
+              }
+            />
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginTop": 5,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "marginBottom": 3,
+                  },
+                ]
+              }
+            >
+              Humidity
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "marginBottom": 3,
+                  },
+                ]
+              }
+            >
+               %
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginTop": 5,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "marginBottom": 3,
+                  },
+                ]
+              }
+            >
+              Speed Wind
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "marginBottom": 3,
+                  },
+                ]
+              }
+            >
+               m/s
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginTop": 5,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "marginBottom": 3,
+                  },
+                ]
+              }
+            >
+              Cloud Percentage
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "marginBottom": 3,
+                  },
+                ]
+              }
+            >
+               %
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginTop": 5,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "marginBottom": 3,
+                  },
+                ]
+              }
+            >
+              Atmospheric Pressure
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "marginBottom": 3,
+                  },
+                ]
+              }
+            >
+               hPa
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            undefined,
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "alignSelf": "center",
+            },
+          ]
+        }
+      >
+        <View
+          autoPlay={true}
+          cacheComposition={true}
+          collapsable={false}
+          enableMergePathsAndroidForKitKatAndAbove={false}
+          forwardedRef={[Function]}
+          loop={true}
+          nativeID="animatedComponent"
+          onAnimationFinish={[Function]}
+          onLayout={[Function]}
+          progress={0}
+          resizeMode="contain"
+          speed={1}
+          style={
+            Object {
+              "alignSelf": "center",
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </View>
+    </View>
+  </RCTScrollView>,
+]
+`;

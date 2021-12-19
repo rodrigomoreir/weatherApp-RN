@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Bar matches snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#F5F8FA",
+        "borderColor": "#808080",
+        "borderRadius": 15,
+        "borderWidth": 0.5,
+        "flexDirection": "row",
+        "height": 40,
+      },
+    ]
+  }
+>
+  <TextInput
+    onChangeText={[Function]}
+    placeholder="Busque uma cidade"
+    placeholderTextColor="#969CB2"
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "paddingLeft": 20,
+        },
+      ]
+    }
+    testID="text-input"
+    value="test"
+  />
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={false}
+    nativeID="animatedComponent"
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "marginRight": 20,
+        "opacity": 1,
+      }
+    }
+    testID="pressable-icon"
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../src/assets/icons/icSearch.png",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "tintColor": "#808080",
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;

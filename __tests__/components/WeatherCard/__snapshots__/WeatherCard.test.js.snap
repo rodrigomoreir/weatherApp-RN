@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card matches snapshot 1`] = `
+<View
+  animate={
+    Object {
+      "opacity": 1,
+      "translateY": 0,
+    }
+  }
+  from={
+    Object {
+      "opacity": 0,
+      "translateY": 50,
+    }
+  }
+  style={
+    Array [
+      Object {
+        "opacity": [MockFunction],
+        "transform": [MockFunction],
+      },
+    ]
+  }
+  transition={
+    Object {
+      "duration": 700,
+      "type": "timing",
+    }
+  }
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    nativeID="animatedComponent"
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#F5F8FA",
+        "borderColor": "#808080",
+        "borderRadius": 20,
+        "borderWidth": 0.5,
+        "flexDirection": "row",
+        "height": 120,
+        "justifyContent": "space-between",
+        "marginBottom": 10,
+        "opacity": 1,
+        "paddingBottom": 15,
+        "paddingLeft": 15,
+        "paddingRight": 15,
+        "paddingTop": 15,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-start",
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "justifyContent": "space-between",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontSize": 20,
+                "fontWeight": "bold",
+              },
+            ]
+          }
+        >
+          City
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#969CB2",
+                "fontSize": 13,
+                "fontWeight": "bold",
+              },
+            ]
+          }
+        >
+          hour
+        </Text>
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#969CB2",
+              "fontSize": 13,
+              "fontWeight": "bold",
+            },
+          ]
+        }
+      >
+        weather
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-end",
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "justifyContent": "space-between",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontSize": 30,
+            },
+          ]
+        }
+      >
+        temperature
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#969CB2",
+              "fontSize": 13,
+              "fontWeight": "bold",
+            },
+          ]
+        }
+      >
+        tempMaxAndMin
+      </Text>
+    </View>
+  </View>
+</View>
+`;

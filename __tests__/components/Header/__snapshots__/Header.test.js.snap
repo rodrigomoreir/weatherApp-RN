@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header matches snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "paddingBottom": 15,
+        "paddingLeft": 15,
+        "paddingRight": 15,
+        "paddingTop": 15,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#F5F8FA",
+          "borderColor": "#808080",
+          "borderRadius": 20,
+          "borderWidth": 0.5,
+          "height": 40,
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": 40,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../src/assets/icons/chevronLeft.png",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 20,
+              "tintColor": "#808080",
+              "width": 20,
+            },
+          ]
+        }
+      />
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontSize": 25,
+            "fontWeight": "bold",
+            "marginLeft": 20,
+          },
+        ]
+      }
+    >
+      Header Test
+    </Text>
+  </View>
+</View>
+`;
