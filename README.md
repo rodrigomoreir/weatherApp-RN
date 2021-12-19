@@ -74,7 +74,7 @@ Tests with Jest were implemented, including snapshots. To run the tests, just ru
 
 ### Reports
 - Dia 14/12: 2 horas
-- - 21:30 às 23:30: Criação do projeto, primeira tela e rotas
+  - 21:30 às 23:30: Criação do projeto, primeira tela e rotas
 
 - Dia 15/12: 4 horas
 - - 08:40 às 09:30: Criação do WeatherCard
